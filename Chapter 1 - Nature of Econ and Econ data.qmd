@@ -13,9 +13,9 @@ library(tidyverse)
 library(wooldridge)
 ```
 
-## C4 The data in JTRAIN2 come from a job training experiment conducted for low-income men during 1976–1977
+#### C4 The data in JTRAIN2 come from a job training experiment conducted for low-income men during 1976–1977
 
-### (1)Use the indicator variable train to determine the fraction of men receiving job training.
+#### (1)Use the indicator variable train to determine the fraction of men receiving job training.
 
 ```{r}
 data("jtrain2")
@@ -29,7 +29,7 @@ jtrain2 %>% summarise(
 )
 ```
 
-### (2)The variable `re78` is earnings from 1978, measured in thousands of 1982 dollars. Find the averages of re78 for the sample of men receiving job training and the sample not receiving job training. Is the difference economically large?
+#### (2)The variable `re78` is earnings from 1978, measured in thousands of 1982 dollars. Find the averages of re78 for the sample of men receiving job training and the sample not receiving job training. Is the difference economically large?
 
 ```{r}
 jtrain2 %>% summarise(
@@ -39,7 +39,7 @@ jtrain2 %>% summarise(
 )
 ```
 
-### (3)The variable `unem78` is an indicator of whether a man was unemployed or not in 1978. What fraction of the men who received job training were unemployed? What about for men who did not receive job training? Comment on the difference.
+#### (3)The variable `unem78` is an indicator of whether a man was unemployed or not in 1978. What fraction of the men who received job training were unemployed? What about for men who did not receive job training? Comment on the difference.
 
 ```{r}
 jtrain2 %>% 
@@ -51,13 +51,13 @@ jtrain2 %>%
 )
 ```
 
-### (4)From parts (ii) and (iii), does it appear that the job training program was effective? What would make our conclusions more convincing?
+#### (4)From parts (ii) and (iii), does it appear that the job training program was effective? What would make our conclusions more convincing?
 
 Yes, it is very strong by guts. Formal prove will be in Ch.9.
 
-## CE5.The data in FERTIL2 were collected on women living in the Republic of Botswana in 1988. The variable children refers to the number of living children. The variable electric is a binary indicator equal to one if the woman’s home has electricity, and zero if not.
+#### CE5.The data in FERTIL2 were collected on women living in the Republic of Botswana in 1988. The variable children refers to the number of living children. The variable electric is a binary indicator equal to one if the woman’s home has electricity, and zero if not.
 
-### (1)Find the smallest and largest values of children in the sample. What is the average of children? 
+##### (1)Find the smallest and largest values of children in the sample. What is the average of children? 
 
 ```{r}
 data("fertil2")
@@ -72,7 +72,7 @@ fertil2 %>%
     )
 ```
 
-### (2) What percentage of women have electricity in the home? 
+##### (2) What percentage of women have electricity in the home? 
 
 ```{r}
 fertil2 %>% 
@@ -83,7 +83,7 @@ fertil2 %>%
     )
 ```
 
-### (3) Compute the average of children for those without electricity and do the same for those with electricity. Comment on what you find. 
+##### (3) Compute the average of children for those without electricity and do the same for those with electricity. Comment on what you find. 
 
 ```{r}
 fertil2 %>% 
@@ -93,17 +93,17 @@ fertil2 %>%
     )
 ```
 
-### (4) From part (iii), can you infer that having electricity “causes” women to have fewer children? Explain.
+##### (4) From part (iii), can you infer that having electricity “causes” women to have fewer children? Explain.
 
 No! Electricity is an indicator of house wealth. A house with electricity mean they have a rich life in that country, and rich people have fewer children generally.
 
-## CE6. Use the data in COUNTYMURDERS to answer this question. Use only the year 1996. The variable `murders` is the number of murders reported in the county. The variable `execs` is the number of executions that took place of people sentenced to death in the given county. Most states in the United States have the death penalty, but several do not.
+#### CE6. Use the data in COUNTYMURDERS to answer this question. Use only the year 1996. The variable `murders` is the number of murders reported in the county. The variable `execs` is the number of executions that took place of people sentenced to death in the given county. Most states in the United States have the death penalty, but several do not.
 
 ```{r}
 data("countymurders")
 ```
 
-### (1) How many counties are there in the data set? Of these, how many have zero murders? What
+##### (1) How many counties are there in the data set? Of these, how many have zero murders? What
 percentage of counties have zero executions? (Remember, use only the 1996 data.)
 
 ```{r}
@@ -116,7 +116,7 @@ countymurders %>%
     )
 ```
 
-### (2) What is the largest number of murders? What is the largest number of executions? Compute the average number of executions and explain why it is so small.
+##### (2) What is the largest number of murders? What is the largest number of executions? Compute the average number of executions and explain why it is so small.
 
 ```{r}
 countymurders %>% 
@@ -128,7 +128,7 @@ countymurders %>%
     )
 ```
 
-### (3) Compute the correlation coefficient between murders and execs and describe what you find.
+##### (3) Compute the correlation coefficient between murders and execs and describe what you find.
 
 ```{r}
 countymurders %>% 
@@ -136,13 +136,13 @@ countymurders %>%
     {cor.test(.$murders, .$execs)}
 ```
 
-### (4) You should have computed a positive correlation in part (iii). Do you think that more executions cause more murders to occur? What might explain the positive correlation?
+##### (4) You should have computed a positive correlation in part (iii). Do you think that more executions cause more murders to occur? What might explain the positive correlation?
 
 No! 21% correlation doesn't imply the more execs the more murders.
 
-## CE7.The data set in ALCOHOL contains information on a sample of men in the United States. Two key variables are self-reported employment status and alcohol abuse (along with many other variables).The variables `employ` and `abuse` are both binary, or indicator, variables: they take on only the values zero and one.
+#### CE7.The data set in ALCOHOL contains information on a sample of men in the United States. Two key variables are self-reported employment status and alcohol abuse (along with many other variables).The variables `employ` and `abuse` are both binary, or indicator, variables: they take on only the values zero and one.
 
-### 
+##### 
 (i) What percentage of the men in the sample report abusing alcohol? What is the employment rate?
 
 ```{r}
@@ -158,7 +158,7 @@ alcohol %>%
     )
 ```
 
-### 
+##### 
 (ii) Consider the group of men who abuse alcohol. What is the employment rate?
 
 ```{r}
@@ -167,7 +167,7 @@ alcohol %>%
     summarise(mean(employ, na.rm=TRUE))
 ```
 
-### 
+##### 
 (iii) What is the employment rate for the group of men who do not abuse alcohol?
 
 ```{r}
@@ -176,18 +176,18 @@ alcohol %>%
     summarise(mean(employ, na.rm=TRUE))
 ```
 
-### 
+##### 
 (iv) Discuss the difference in your answers to parts (ii) and (iii). Does this allow you to conclude that alcohol abuse causes unemployment?
 
 It is hard to determine, need to process serious test.
 
-## CE8.The data in ECONMATH were obtained on students from a large university course in introductory microeconomics. For this problem, we are interested in two variables: `score`, which is the final course score, and `econhs`, which is a binary variable indicating whether a student took an economics course in high school.
+#### CE8.The data in ECONMATH were obtained on students from a large university course in introductory microeconomics. For this problem, we are interested in two variables: `score`, which is the final course score, and `econhs`, which is a binary variable indicating whether a student took an economics course in high school.
 
 ```{r}
 data("econmath")
 ```
 
-### (i) How many students are in the sample? How many students report taking an economics course in high school?
+##### (i) How many students are in the sample? How many students report taking an economics course in high school?
 
 ```{r}
 econmath %>% 
@@ -198,7 +198,7 @@ econmath %>%
     )
 ```
 
-### (ii) Find the average of score for those students who did take a high school economics class.How does it compare with the average of score for those who did not?
+##### (ii) Find the average of score for those students who did take a high school economics class.How does it compare with the average of score for those who did not?
 
 ```{r}
 econmath %>% 
@@ -206,7 +206,7 @@ econmath %>%
     summarise(avg_score = mean(score, na.rm=TRUE))
 ```
 
-### 
+##### 
 (iii) Do the findings in part (ii) necessarily tell you anything about the causal effect of taking high school economics on college course performance? Explain.
 
 ```{r}
@@ -215,18 +215,18 @@ cor.test(econmath$score, econmath$econhs)
 
 It is hard to say whether taking economics in high school will influence one's economics performance at university, as there are many contributing factors.
 
-### 
+##### 
 (iv) If you want to obtain a good causal estimate of the effect of taking a high school economics course using the difference in averages, what experiment would you run?
 
 Need to design an AB testing. But it is hard to conduct.
 
-## CE9.The data set in LOANAPP contains information on a sample of mortgage applications in the Boston, Massachusetts area; the data were originally compiled by the Federal Reserve Bank of Boston. The race variable, denoted `white`, is recorded as binary, equaling one if the mortgage applicant is classified as White and zero therwise. The variable `approve` is also binary, equaling one if the loan application was approved, and zero otherwise.
+#### CE9.The data set in LOANAPP contains information on a sample of mortgage applications in the Boston, Massachusetts area; the data were originally compiled by the Federal Reserve Bank of Boston. The race variable, denoted `white`, is recorded as binary, equaling one if the mortgage applicant is classified as White and zero therwise. The variable `approve` is also binary, equaling one if the loan application was approved, and zero otherwise.
 
 ```{r}
 data("loanapp")
 ```
 
-### 
+##### 
 (i) What proportion of the applicants in the sample are recorded as being White?
 
 ```{r}
@@ -237,7 +237,7 @@ loanapp %>%
     )
 ```
 
-### (ii) For the group of non-White applicants, what is the proportion of loans approved?
+##### (ii) For the group of non-White applicants, what is the proportion of loans approved?
 
 ```{r}
 loanapp %>%
@@ -248,7 +248,7 @@ loanapp %>%
     )
 ```
 
-### 
+##### 
 (iii) What is the loan approval rate for White applicants?
 
 ```{r}
@@ -260,7 +260,7 @@ loanapp %>%
     )
 ```
 
-### 
+##### 
 (iv) Report the difference between (iii) and (ii) in percentage point terms. Does this analysis allow you to convincingly conclude that there is racial bias in mortgage application approvals? Explain.
 
 The difference is about 20.1 percentage points. However, there are many valid reasons that a mortgage application might be rejected, and these factors might be correlated with race,
